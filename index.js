@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Client, Events, GatewayIntentBits } from "discord.js";
-dotenv.config();
+import './keep_alive.js';
 const allowedChannelID = "1302490769059221545";
 
 const getData = async (link) => {
