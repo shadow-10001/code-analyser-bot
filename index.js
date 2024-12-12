@@ -275,10 +275,12 @@ client.on("messageCreate", (msg) => {
               } else {
                 if (data.includes("✅") == true) {
                   userModel
-                    .findOneAndUpdate(
+                  .findOneAndUpdate(
                       { user_ID: msg.author.id },
-                      { no_submission_perDay: 4 },
-                      { $inc: { user_points: 10 } }
+                      {
+                        $set: { no_submission_perDay: 4 },
+                        $inc: { user_points: 10 },
+                      }
                     )
                     .then((data) => {
                       // console.log(data);
