@@ -14,9 +14,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 let question = ``;
 
 await mongoose
-  .connect(
-    `mongodb+srv://shadow:${process.env.MONGODB_TOKEN}@cluster0.bpvig.mongodb.net/bot-database?retryWrites=true&w=majority&appName=Cluster0`
-  )
+  .connect(process.env.MONGODB_TOKEN)
   .then(async () => {
     console.log("connected to database");
   })
